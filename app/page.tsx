@@ -1,33 +1,21 @@
-import { fetchData } from "@/graphqlClient";
+import { Landing } from "./landing/Landing";
+import LandingCamps from "./landing-camps/LandingCamps";
+import { About } from "./about/About";
+import { Coach } from "./coach/Coach";
+import LandingGallery from "./landingGallery/LandingGallery";
+import { Partners } from "./partners/Partners";
+import { FaqSection } from "./faqSection/FaqSection";
 
-const GET_GALLERIES_QUERY = `
-  query GetGalleries {
-    galleries {
-      id
-      title
-      description
-    }
-  }
-`;
-
-export default async function Home() {
-  const data = await fetchData(GET_GALLERIES_QUERY);
-
+export default function Home() {
   return (
     <main>
-      <h1>PŁOMIEŃ CAMP</h1>
-      <h2>{process.env.HYGRAPH_API_URL}</h2>
-      <div>
-        <h1>Blog Posts</h1>
-        <ul>
-          {data.galleries.map((gallery) => (
-            <li key={gallery.id}>
-              <h2>{gallery.title}</h2>
-              <p>{gallery.description}</p>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <Landing />
+      <LandingCamps />
+      <About />
+      <Coach />
+      <LandingGallery />
+      <Partners />
+      <FaqSection />
     </main>
   );
 }
