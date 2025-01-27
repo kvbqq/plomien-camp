@@ -5,3 +5,12 @@ export interface SliderElement {
   icon: ReactNode;
   text: ReactNode;
 }
+
+export interface GalleryImageType {
+  id: string;
+  title: string;
+  description: string;
+  image: {
+    url: string;
+  };
+}

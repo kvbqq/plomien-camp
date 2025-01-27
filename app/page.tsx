@@ -1,5 +1,5 @@
 import { Landing } from "./landing/Landing";
-import LandingCamps from "./landing-camps/LandingCamps";
+import LandingCamps from "./landingCamps/LandingCamps";
 import { About } from "./about/About";
 import { Coach } from "./coach/Coach";
 import LandingGallery from "./landingGallery/LandingGallery";
