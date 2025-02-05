@@ -57,19 +57,19 @@ export const ContactFooter = () => {
           <div>
             <h1 className={"mb-5 text-xl font-semibold"}>Obozy</h1>
             <div className={"flex flex-col space-y-2 font-thin text-sm"}>
-              <Link href={"#turnusy"}>Turnusy</Link>
-              <Link href={"#o-nas"}>O nas</Link>
-              <Link href={"/galeria"}>Galeria</Link>
+              <Link href={"../#campy"}>Turnusy</Link>
+              <Link href={"../#o-nas"}>O nas</Link>
+              <Link href={"../#galeria"}>Galeria</Link>
             </div>
           </div>
         </div>
         <div>
           <h1 className={"mb-5 text-xl font-semibold"}>Social Media</h1>
           <div className={"flex items-center space-x-3"}>
-            <Link href={"https://www.facebook.com/akademiaplomienmilowice"}>
+            <Link href={"https://www.facebook.com/plomiencamp"}>
               <FaFacebookSquare size={28} color="#EE3135" />
             </Link>
-            <Link href={"https://www.instagram.com/plomien.milowice"}>
+            <Link href={"https://www.instagram.com/plomien.camp"}>
               <FaInstagram size={28} color="#EE3135" />
             </Link>
           </div>

@@ -20,9 +20,14 @@ interface NavProps {
 }
 
 const NavLogo = () => {
+  const isDesktop = useMediaQuery("(min-width: 1000px)");
   return (
     <Link href="/">
-      <Image src={Logo} alt={"Płomień Milowice"} className="w-20 min-w-14" />
+      <Image
+        src={Logo}
+        alt={"Płomień Milowice"}
+        className={`${isDesktop ? "w-20" : "w-16"} min-w-14`}
+      />
     </Link>
   );
 };
@@ -46,7 +51,7 @@ const NavMenu: React.FC<NavProps> = ({ isLanding }) => {
           </li>
         ))}
       </ul>
-      <Button text="ZAPISZ SIĘ" href="zapisy" style="min-w-48 font-bold" />
+      <Button text="ZAPISZ SIĘ" href="../#campy" style="min-w-48 font-bold" />
     </React.Fragment>
   );
 };
@@ -55,7 +60,7 @@ const NavMenuMobile: React.FC<NavMenuMobileProps> = ({ toggleNav }) => {
   return (
     <div
       className={
-        "w-full h-svh absolute inset-0 pb-16 flex flex-col justify-center items-center text-center bg-white -z-10"
+        "w-full h-screen absolute inset-0 pb-16 flex flex-col justify-center items-center text-center bg-white -z-10"
       }
     >
       <ul className={"pb-10"}>
@@ -73,7 +78,7 @@ const NavMenuMobile: React.FC<NavMenuMobileProps> = ({ toggleNav }) => {
       </ul>
       <Button
         text="ZAPISZ SIĘ"
-        href="zapisy"
+        href="../#campy"
         style="min-w-48"
         onclick={toggleNav}
       />
@@ -108,8 +113,8 @@ export const Nav: React.FC<NavProps> = ({ isLanding }) => {
     >
       <div
         className={`flex items-center ${
-          isDesktop ? "justify-center" : "w-[90%] justify-between"
-        } h-32`}
+          isDesktop ? "justify-center h-32" : "w-[90%] h-24 justify-between"
+        }`}
       >
         <NavLogo />
         {isDesktop ? (

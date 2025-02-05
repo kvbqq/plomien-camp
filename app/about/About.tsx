@@ -8,7 +8,7 @@ export const About = () => {
   const isDesktop = useMediaQuery("(min-width: 1000px)");
 
   return (
-    <section id="about" className={`w-full my-10 flex flex-col items-center`}>
+    <section id="o-nas" className={`w-full my-10 flex flex-col items-center`}>
       <h1
         className={`${
           isDesktop ? "w-[60rem] text-[2rem]" : "w-full text-2xl text-center"

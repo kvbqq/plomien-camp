@@ -11,13 +11,6 @@ const hygraphClient = new GraphQLClient(
 
 export const fetchData = async (query, variables = {}) => {
   try {
-    console.log("HYGRAPH_API_URL:", process.env.NEXT_PUBLIC_HYGRAPH_API_URL);
-    console.log(
-      "HYGRAPH_AUTH_TOKEN:",
-      process.env.NEXT_PUBLIC_HYGRAPH_AUTH_TOKEN
-        ? "Token is set"
-        : "Token is missing!"
-    );
     const data = await hygraphClient.request(query, variables);
     return data;
   } catch (error) {

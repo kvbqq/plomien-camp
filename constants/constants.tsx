@@ -18,17 +18,17 @@ export const navLinks = [
   {
     label: "O NAS",
     color: "black",
-    href: "#about",
+    href: "../#o-nas",
   },
   {
     label: "TURNUSY",
     color: "white",
-    href: "#campy",
+    href: "../#campy",
   },
   {
     label: "GALERIA",
     color: "white",
-    href: "#galeria",
+    href: "..#galeria",
   },
   {
     label: "KONTAKT",

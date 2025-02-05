@@ -44,7 +44,7 @@ const GET_CAMPS_QUERY_WHERE = `
             hallImage {
               url
             }
-            gallery {
+            gallery(first: 100) {
               id
               url
             }        
@@ -124,8 +124,8 @@ export default function CampDetails() {
       >
         <h1
           className={`${
-            isDesktop ? "w-[60rem]" : "w-full text-center"
-          } pb-6 font-bold text-[2rem]`}
+            isDesktop ? "w-[60rem] text-2xl" : "w-[90%] text-xl"
+          } pb-6 font-bold`}
         >
           {campId?.toString().slice(0, 1).toUpperCase()}
           {campId?.toString().slice(1).replace("-", " ")} -{" "}
@@ -135,11 +135,15 @@ export default function CampDetails() {
         </h1>
         <div
           className={`${
-            isDesktop ? "w-[60rem]" : "w-full"
-          } flex gap-5 hover:cursor-pointer`}
-          onClick={() => setShowGallery(true)}
+            isDesktop ? "w-[60rem]" : "w-[90%] flex-col"
+          } flex gap-5`}
         >
-          <div className={`w-2/3 h-[350px] relative rounded-2xl`}>
+          <div
+            className={`${
+              isDesktop ? "w-2/3 h-[350px]" : "w-full h-[250px]"
+            } relative rounded-2xl hover:cursor-pointer`}
+            onClick={() => setShowGallery(true)}
+          >
             <Image
               src={camps[0].gallery[0].url}
               alt={camps[0].name}
@@ -160,7 +164,9 @@ export default function CampDetails() {
             </div>
           </div>
           <div
-            className={`w-1/3 h-[350px] p-10 flex flex-col items-center rounded-2xl border border-gray-100 shadow-lg`}
+            className={`${
+              isDesktop ? "w-1/3" : "w-full"
+            } h-[350px] p-10 flex flex-col items-center rounded-2xl border border-gray-100 shadow-lg`}
           >
             <p className={`w-full font-semibold`}>
               <span className={`text-custom-red`}>Start:</span> {camps[0].start}
@@ -198,31 +204,41 @@ export default function CampDetails() {
           />
         ) : null}
         <div
-          className={`w-[38rem] my-10 px-10 py-5 flex gap-5 rounded-2xl border border-gray-100 shadow-lg`}
+          className={`${
+            isDesktop ? "w-[38rem] px-10" : "w-[90%] px-5"
+          } my-10 py-5 flex gap-5 rounded-2xl border border-gray-100 shadow-lg`}
         >
-          <div className={`w-2/3 flex items-center gap-4`}>
+          <div
+            className={`${
+              isDesktop ? "w-2/3" : "w-1/2"
+            } flex items-center gap-4`}
+          >
             <MdOutlineVerified size={52} color="#EE3135" />
-            <p>Obóz zgłoszony do Ministerstwa Sportu i Turystyki</p>
+            <p className={`${isDesktop ? null : "text-[0.6rem]"}`}>
+              Obóz zgłoszony do Ministerstwa Sportu i Turystyki
+            </p>
           </div>
-          <div className={`w-1/3 h-[50px] relative`}>
+          <div
+            className={`${
+              isDesktop ? "w-1/3" : "w-1/2"
+            } h-[50px] relative flex items-center`}
+          >
             <Image
               src={verifiedImage}
               alt={"Ministerstwo Sportu i Turystyki"}
-              fill
-              objectFit="cover"
               quality={100}
             />
           </div>
         </div>
-        <h1 className={`font-semibold text-3xl`}>
+        <h1 className={`${isDesktop ? "text-3xl" : "text-2xl"} font-semibold`}>
           Oferta <span className={`text-custom-red`}>campu</span>
         </h1>
         <div
           className={`${
-            isDesktop ? "w-[60rem]" : "w-full flex-col"
+            isDesktop ? "w-[60rem]" : "w-[90%] flex-col"
           } flex gap-10 px-14 py-10 my-10 rounded-2xl border border-gray-100 shadow-lg`}
         >
-          <div className={`w-1/2`}>
+          <div className={`${isDesktop ? "w-1/2" : "w-full"}`}>
             <h2 className={`w-full mb-5 text-lg font-semibold text-center`}>
               Oferta <span className={`text-custom-red`}>siatkarska</span>
             </h2>
@@ -234,7 +250,7 @@ export default function CampDetails() {
               <li>Turnieje i mecze - rywalizacja w przyjaznej atmosferze</li>
             </ul>
           </div>
-          <div className={`w-1/2`}>
+          <div className={`${isDesktop ? "w-1/2" : "w-full"}`}>
             <h2 className={`w-full mb-5 text-lg font-semibold text-center`}>
               Dodatkowe <span className={`text-custom-red`}>atrakcje</span>
             </h2>
@@ -252,21 +268,31 @@ export default function CampDetails() {
             </ul>
           </div>
         </div>
-        <h1 className={`text-2xl font-semibold`}>
+        <h1 className={`${isDesktop ? "text-2xl" : "text-xl"} font-semibold`}>
           Zakwaterowanie <span className={`text-custom-red`}>i wyżywienie</span>
         </h1>
-        <p className={`${isDesktop ? "w-[60rem]" : "w-full"} my-3 text-center`}>
+        <p
+          className={`${isDesktop ? "w-[60rem]" : "w-[90%]"} my-3 text-center`}
+        >
           {camps[0].description}
         </p>
-        <div className={`w-[60rem] flex gap-5`}>
+        <div
+          className={`${
+            isDesktop ? "w-[60rem]" : "w-[90%] flex-col"
+          } flex gap-5`}
+        >
           <div
-            className={`w-1/2 p-10 flex items-center gap-5 rounded-2xl border border-gray-100 shadow-lg`}
+            className={`${
+              isDesktop ? "w-1/2" : "w-full"
+            } p-10 flex items-center gap-5 rounded-2xl border border-gray-100 shadow-lg`}
           >
             <MdBed size={86} color="#EE3135" />
             {camps[0].foodInfo}
           </div>
           <div
-            className={`w-1/2 p-10 flex gap-5 items-center rounded-2xl border border-gray-100 shadow-lg`}
+            className={`${
+              isDesktop ? "w-1/2" : "w-full"
+            } p-10 flex gap-5 items-center rounded-2xl border border-gray-100 shadow-lg`}
           >
             <MdOutlineRestaurant size={86} color="#EE3135" />
             <p>
@@ -277,17 +303,21 @@ export default function CampDetails() {
         </div>
         <div
           className={`${
-            isDesktop ? "w-[60rem]" : "w-full flex-col"
+            isDesktop ? "w-[60rem]" : "w-[90%] flex-col"
           } flex gap-10 p-10 my-5 rounded-2xl border border-gray-100 shadow-lg`}
         >
-          <div className={`w-1/2`}>
+          <div className={`${isDesktop ? "w-1/2" : "w-full"}`}>
             <h2 className={`mb-3 text-lg font-semibold`}>
               Nowoczesna{" "}
               <span className={`text-custom-red`}>hala sportowa</span>
             </h2>
             <p className={`font-medium`}>{camps[0].hallInfo}</p>
           </div>
-          <div className={`w-1/2 h-[16rem] relative rounded-xl`}>
+          <div
+            className={`${
+              isDesktop ? "w-1/2 h-[16rem]" : "w-full h-[12rem]"
+            } relative rounded-xl`}
+          >
             <Image
               src={camps[0].hallImage.url}
               alt={`Hala sportowa - ${camps[0].place}`}
@@ -300,17 +330,21 @@ export default function CampDetails() {
         </div>
         <h1
           className={`${
-            isDesktop ? "w-[60rem]" : "w-full"
-          } my-10 text-2xl font-semibold text-center`}
+            isDesktop ? "w-[60rem] text-2xl" : "w-full text-xl"
+          } my-10 font-semibold text-center`}
         >
           Cena zawiera:
         </h1>
         <div
-          className={`w-[38rem] px-14 py-10 rounded-2xl border border-gray-100 shadow-lg`}
+          className={`${
+            isDesktop ? "w-[38rem]" : "w-[90%]"
+          } px-14 py-10 rounded-2xl border border-gray-100 shadow-lg`}
         >
           <ul className={`list-disc`}>
             {camps[0].includes.map((element, index) => (
-              <li key={index}>{element}</li>
+              <li key={index} className={`${isDesktop ? null : "text-sm"}`}>
+                {element}
+              </li>
             ))}
           </ul>
         </div>
