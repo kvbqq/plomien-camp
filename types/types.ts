@@ -11,9 +11,11 @@ export interface GalleryImageType {
   image: {
     url: string;
   };
+  type: "image";
 }
 
 export interface GalleryCampType {
   id: string;
   url: string;
+  type: "camp";
 }

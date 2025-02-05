@@ -72,7 +72,7 @@ export const GallerySlider: React.FC<GallerySliderProps> = ({
 
         {"image" in images[0] ? (
           <Image
-            src={images[currentIndex]?.image?.url}
+            src={(images[currentIndex] as GalleryImageType)?.image?.url}
             alt={images[currentIndex]?.id}
             width={1000}
             height={500}
@@ -81,7 +81,7 @@ export const GallerySlider: React.FC<GallerySliderProps> = ({
           />
         ) : (
           <Image
-            src={images[currentIndex]?.url}
+            src={(images[currentIndex] as GalleryCampType)?.url}
             alt={images[currentIndex]?.id}
             width={1000}
             height={500}
