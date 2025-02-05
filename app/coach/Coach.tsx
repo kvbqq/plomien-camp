@@ -27,7 +27,7 @@ export const Coach = () => {
         className={`${
           isDesktop
             ? "w-[60rem] justify-between items-end"
-            : "w-[90%] flex-col-reverse items-center"
+            : "w-[90%] flex-col items-center"
         } mb-20 flex gap-14`}
       >
         <Image

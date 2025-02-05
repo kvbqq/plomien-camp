@@ -55,18 +55,21 @@ export const GallerySlider: React.FC<GallerySliderProps> = ({
 
   return (
     <div
-      className={`w-screen h-screen fixed flex flex-col justify-between inset-0 bg-black bg-opacity-80 backdrop-blur-sm z-20 overflow-auto`}
+      className={`w-screen h-svh fixed flex flex-col justify-between inset-0 bg-black bg-opacity-80 backdrop-blur-sm z-20 overflow-auto`}
     >
-      <div className={`w-full p-10 flex justify-between text-white`}>
+      <div className={`w-full p-3 text-white`}>
         {/* <p>{images[currentIndex].title}</p> */}
         <button onClick={() => setShowGallery(false)}>
           <HiOutlineX size={42} />
         </button>
       </div>
       <div
-        className={`w-full p-10 flex justify-between align-center text-white`}
+        className={`w-full relative p-10 flex justify-center align-center text-white`}
       >
-        <button onClick={() => prevImage()}>
+        <button
+          onClick={() => prevImage()}
+          className={`h-12 fixed left-0 top-1/2`}
+        >
           <MdKeyboardArrowLeft size={64} />
         </button>
 
@@ -76,7 +79,7 @@ export const GallerySlider: React.FC<GallerySliderProps> = ({
             alt={images[currentIndex]?.id}
             width={1000}
             height={500}
-            style={{ width: "50%", height: "auto" }}
+            style={{ maxWidth: "700px", width: "100vw", height: "auto" }}
             quality={100}
           />
         ) : (
@@ -85,17 +88,17 @@ export const GallerySlider: React.FC<GallerySliderProps> = ({
             alt={images[currentIndex]?.id}
             width={1000}
             height={500}
-            style={{ width: "50%", height: "auto" }}
+            style={{ maxWidth: "650px", width: "100vw", height: "auto" }}
             quality={100}
           />
         )}
 
-        <button onClick={() => nextImage()}>
+        <button onClick={() => nextImage()} className={`fixed right-0 top-1/2`}>
           <MdKeyboardArrowRight size={64} />
         </button>
       </div>
-      <div className={`w-full p-10 flex justify-center text-white`}>
-        <p>
+      <div className={`w-full p-3 flex justify-center text-white`}>
+        <p className={`h-12`}>
           {currentIndex + 1} / {images.length}
         </p>
       </div>

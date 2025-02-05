@@ -38,7 +38,7 @@ export const FaqSection = () => {
         <hr className="w-full mb-5 border-t-2 border-gray-200" />
         <FaqElement
           question="Jak mogę zapisać dziecko na obóz?"
-          answer="Proces rejestracji jest prosty i odbywa się online poprzez formularz na naszej stronie."
+          answer='Wystarczy wybrać turnus, przeczytać ofertę i kliknąć przycisk "Zapisz się". Nastąpi przekierowanie na stronę biura podróży, gdzie należy wybrać odpowiedni termin i kliknąć "Rezerwuj wstępnie". Następnie należy wypełnić formularz i kliknąć na samym dole przycisk "Rezerwuj". Po tym etapie biuro podróży skontaktuje się z państwem drogą mailową.'
         />
         <hr className="w-full mb-5 border-t-2 border-gray-200" />
         <FaqElement
