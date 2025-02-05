@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 
 import { ContactFooter } from "./contactFooter/ContactFooter";
 import "./globals.css";
@@ -26,6 +27,7 @@ export default function RootLayout({
       <body className={montserrat.className}>
         {children}
         <ContactFooter />
+        <Analytics />
       </body>
     </html>
   );
