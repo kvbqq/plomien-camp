@@ -8,8 +8,8 @@ import { MdKeyboardArrowUp } from "react-icons/md";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 
 interface faqProps {
-  question: String;
-  answer: String;
+  question: string;
+  answer: string;
 }
 
 export const FaqElement: React.FC<faqProps> = ({ question, answer }) => {

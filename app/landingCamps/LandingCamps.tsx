@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import Image from "next/image";
+// import Image from "next/image";
 
 import { fetchData } from "@/graphqlClient";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
@@ -45,7 +45,7 @@ export default function LandingCamps() {
         const data = await fetchData(GET_CAMPS_QUERY);
         setCamps(data.camps);
       } catch (err) {
-        setError("Nie udało się załadować danych.");
+        setError("Nie udało się załadować danych." + err);
       } finally {
         setLoading(false);
       }

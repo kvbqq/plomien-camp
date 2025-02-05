@@ -102,7 +102,7 @@ export default function CampDetails() {
         const data = await fetchData(GET_CAMPS_QUERY_WHERE, { campId });
         setCamps(data.camps);
       } catch (err) {
-        setError("Nie udało się załadować danych.");
+        setError("Nie udało się załadować danych." + err);
       } finally {
         setLoading(false);
       }
@@ -112,7 +112,7 @@ export default function CampDetails() {
   }, []);
 
   if (loading) return <p className="text-center">Ładowanie...</p>;
-  // if (error) return <p className="text-center text-red-500">{error}</p>;
+  if (error) return <p className="text-center text-red-500">{error}</p>;
 
   if (camps.length == 0) return <p>Nie znaleziono obozu</p>;
 

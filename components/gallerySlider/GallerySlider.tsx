@@ -21,7 +21,6 @@ interface GallerySliderProps {
 export const GallerySlider: React.FC<GallerySliderProps> = ({
   images,
   startId,
-  showGallery,
   setShowGallery,
 }) => {
   const [currentIndex, setCurrentIndex] = useState(startId);

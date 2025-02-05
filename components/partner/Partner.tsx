@@ -6,8 +6,8 @@ import { useMediaQuery } from "@/hooks/useMediaQuery";
 interface PartnerProps {
   logo: StaticImageData;
   image: StaticImageData;
-  text: String;
-  style?: String;
+  text: string;
+  style?: string;
 }
 
 export const Partner: React.FC<PartnerProps> = ({

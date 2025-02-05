@@ -35,7 +35,7 @@ export default function LandingGallery() {
         const data = await fetchData(GET_GALLERY_QUERY);
         setImages(data.images);
       } catch (err) {
-        setError("Nie udało się załadować danych.");
+        setError("Nie udało się załadować danych." + err);
       } finally {
         setLoading(false);
       }

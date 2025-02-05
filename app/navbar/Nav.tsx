@@ -51,10 +51,7 @@ const NavMenu: React.FC<NavProps> = ({ isLanding }) => {
   );
 };
 
-const NavMenuMobile: React.FC<NavMenuMobileProps> = ({
-  showNav,
-  toggleNav,
-}) => {
+const NavMenuMobile: React.FC<NavMenuMobileProps> = ({ toggleNav }) => {
   return (
     <div
       className={
