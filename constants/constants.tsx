@@ -23,12 +23,12 @@ export const navLinks = [
   {
     label: "TURNUSY",
     color: "white",
-    href: "",
+    href: "#campy",
   },
   {
     label: "GALERIA",
     color: "white",
-    href: "",
+    href: "#galeria",
   },
   {
     label: "KONTAKT",

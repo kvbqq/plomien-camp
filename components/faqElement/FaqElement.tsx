@@ -5,6 +5,8 @@ import React, { useState } from "react";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { MdKeyboardArrowUp } from "react-icons/md";
 
+import { useMediaQuery } from "@/hooks/useMediaQuery";
+
 interface faqProps {
   question: String;
   answer: String;
@@ -12,6 +14,7 @@ interface faqProps {
 
 export const FaqElement: React.FC<faqProps> = ({ question, answer }) => {
   const [showAnsw, setAnsw] = useState(false);
+  const isDesktop = useMediaQuery("(min-width: 1000px)");
 
   const toggle = () => {
     setAnsw(!showAnsw);
@@ -20,7 +23,13 @@ export const FaqElement: React.FC<faqProps> = ({ question, answer }) => {
   return (
     <React.Fragment>
       <div className={`w-full mb-5 flex justify-between items-center`}>
-        <h1 className={`w-auto font-bold text-xl`}>{question}</h1>
+        <h1
+          className={`${
+            isDesktop ? "text-xl" : "text-medium"
+          } w-auto font-bold`}
+        >
+          {question}
+        </h1>
         <button className={`w-[42px] cursor-pointer`} onClick={toggle}>
           {showAnsw ? (
             <MdKeyboardArrowUp size={42} color="#EE3135" />

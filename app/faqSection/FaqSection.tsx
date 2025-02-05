@@ -1,14 +1,24 @@
+"use client";
+
 import React from "react";
 
 import { FaqElement } from "@/components/faqElement/FaqElement";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 
 export const FaqSection = () => {
+  const isDesktop = useMediaQuery("(min-width: 1000px)");
   return (
     <section className={`w-full my-20 flex justify-center items-center`}>
       <div
-        className={`w-[60rem] flex items-center flex-col p-20 rounded-3xl border border-gray-100 shadow-lg`}
+        className={`${
+          isDesktop ? "w-[60rem] p-20" : "w-[90%] p-10"
+        } flex items-center flex-col rounded-3xl border border-gray-100 shadow-lg`}
       >
-        <h1 className={`mb-20 font-bold text-[2rem] align-center`}>
+        <h1
+          className={`${
+            isDesktop ? "text-[2rem]" : "text-2xl text-center"
+          } mb-20 font-bold align-center`}
+        >
           Najczęściej zadawane pytania
         </h1>
         <FaqElement

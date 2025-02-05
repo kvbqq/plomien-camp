@@ -29,8 +29,8 @@ export const Landing = () => {
       <div className={`h-full w-full flex justify-center`}>
         <div
           className={`${
-            isDesktop ? "w-[63rem]" : "w-[90%]"
-          } h-full pt-20 flex gap-14`}
+            isDesktop ? "w-[63rem] gap-14" : "w-[90%] justify-center"
+          } h-full pt-20 flex`}
         >
           {isDesktop ? (
             <div className={`w-1/2 flex items-center`}>
@@ -48,16 +48,18 @@ export const Landing = () => {
 
           <div
             className={`${
-              isDesktop ? "w-1/2" : "w-full"
+              isDesktop ? "w-1/2" : "max-w-[22rem]"
             } flex flex-col justify-center gap-3 text-white`}
           >
-            <h2 className={`text-lg`}>PŁOMIEŃ VOLLEYBALL CAMP</h2>
-            <h1 className={`font-bold text-5xl`}>
+            <h2 className={`${isDesktop ? "text-lg" : "text-sm"}`}>
+              PŁOMIEŃ VOLLEYBALL CAMP
+            </h2>
+            <h1 className={`${isDesktop ? "text-5xl" : "text-3xl"} font-bold`}>
               Tutaj rodzą
               <br />
               się mistrzowie!
             </h1>
-            <p className={`text-lg`}>
+            <p className={`${isDesktop ? "text-lg" : "text-sm"}`}>
               Obozy siatkarskie z doświadzczoną kadrą,
               <br />
               nowoczesnymi metodami traningowymi
@@ -67,8 +69,8 @@ export const Landing = () => {
             </p>
             <Button
               text="SPRAWDŹ NASZĄ OFERTĘ"
-              href=""
-              style="w-[90%] font-semibold"
+              href="#campy"
+              style={`${isDesktop ? "w-[90%]" : "w-[22rem]"} font-semibold`}
             />
           </div>
         </div>

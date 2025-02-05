@@ -58,7 +58,7 @@ export const Slider: React.FC<SliderProps> = ({ elements, style }) => {
             onClick={previousSlide}
             className={"w-80 flex justify-center"}
           >
-            <HiOutlineChevronLeft size={32} color="#C69A0D" />
+            <HiOutlineChevronLeft size={32} color="#EE3135" />
           </button>
           <ul className={"w-[65rem] flex items-center justify-evenly"}>
             {elements.slice(slide - 1, slide).map((item, i) => (
@@ -74,7 +74,7 @@ export const Slider: React.FC<SliderProps> = ({ elements, style }) => {
             ))}
           </ul>
           <button onClick={nextSlide} className={"w-80 flex justify-center"}>
-            <HiOutlineChevronRight size={32} color="#C69A0D" />
+            <HiOutlineChevronRight size={32} color="#EE3135" />
           </button>
         </React.Fragment>
       )}

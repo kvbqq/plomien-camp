@@ -12,8 +12,6 @@ import { GalleryImageType } from "@/types/types";
 interface ImageProps {
   data: GalleryImageType[];
   id: string;
-  title: string;
-  description: string;
   url: string;
   style?: string;
 }
@@ -21,8 +19,6 @@ interface ImageProps {
 export const GalleryImage: React.FC<ImageProps> = ({
   data,
   id,
-  title,
-  description,
   url,
   style,
 }) => {
@@ -52,7 +48,7 @@ export const GalleryImage: React.FC<ImageProps> = ({
         </div>
         <Image
           src={url}
-          alt={description}
+          alt={id}
           fill
           objectFit="cover"
           quality={100}

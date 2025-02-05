@@ -8,9 +8,12 @@ export interface SliderElement {
 
 export interface GalleryImageType {
   id: string;
-  title: string;
-  description: string;
   image: {
     url: string;
   };
+}
+
+export interface GalleryCampType {
+  id: string;
+  url: string;
 }

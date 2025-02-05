@@ -1,3 +1,4 @@
+import { Nav } from "./navbar/Nav";
 import { Landing } from "./landing/Landing";
 import LandingCamps from "./landingCamps/LandingCamps";
 import { About } from "./about/About";
@@ -9,6 +10,7 @@ import { FaqSection } from "./faqSection/FaqSection";
 export default function Home() {
   return (
     <main>
+      <Nav isLanding={true} />
       <Landing />
       <LandingCamps />
       <About />

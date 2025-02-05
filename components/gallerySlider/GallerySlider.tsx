@@ -3,6 +3,7 @@
 import Image from "next/image";
 
 import { GalleryImageType } from "@/types/types";
+import { GalleryCampType } from "@/types/types";
 
 import { HiOutlineX } from "react-icons/hi";
 import { MdKeyboardArrowLeft } from "react-icons/md";
@@ -11,7 +12,7 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 import { useState, useEffect } from "react";
 
 interface GallerySliderProps {
-  images: GalleryImageType[];
+  images: GalleryImageType[] | GalleryCampType[];
   startId: number;
   showGallery: boolean;
   setShowGallery: React.Dispatch<React.SetStateAction<boolean>>;
@@ -58,7 +59,7 @@ export const GallerySlider: React.FC<GallerySliderProps> = ({
       className={`w-screen h-screen fixed flex flex-col justify-between inset-0 bg-black bg-opacity-80 backdrop-blur-sm z-20 overflow-auto`}
     >
       <div className={`w-full p-10 flex justify-between text-white`}>
-        <p>{images[currentIndex].title}</p>
+        {/* <p>{images[currentIndex].title}</p> */}
         <button onClick={() => setShowGallery(false)}>
           <HiOutlineX size={42} />
         </button>
@@ -70,14 +71,25 @@ export const GallerySlider: React.FC<GallerySliderProps> = ({
           <MdKeyboardArrowLeft size={64} />
         </button>
 
-        <Image
-          src={images[currentIndex]?.image?.url}
-          alt={images[currentIndex]?.description}
-          width={1000}
-          height={500}
-          style={{ width: "50%", height: "auto" }}
-          quality={100}
-        />
+        {"image" in images[0] ? (
+          <Image
+            src={images[currentIndex]?.image?.url}
+            alt={images[currentIndex]?.id}
+            width={1000}
+            height={500}
+            style={{ width: "50%", height: "auto" }}
+            quality={100}
+          />
+        ) : (
+          <Image
+            src={images[currentIndex]?.url}
+            alt={images[currentIndex]?.id}
+            width={1000}
+            height={500}
+            style={{ width: "50%", height: "auto" }}
+            quality={100}
+          />
+        )}
 
         <button onClick={() => nextImage()}>
           <MdKeyboardArrowRight size={64} />
