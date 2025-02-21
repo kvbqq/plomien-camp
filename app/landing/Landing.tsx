@@ -29,11 +29,17 @@ export const Landing = () => {
       <div className={`h-full w-full flex justify-center`}>
         <div
           className={`${
-            isDesktop ? "w-[63rem] gap-14" : "w-[90%] justify-center"
-          } h-full pt-20 flex`}
+            isDesktop
+              ? "w-[63rem] gap-14"
+              : "w-[90%] items-center justify-center gap-5 flex-col-reverse"
+          } flex h-full pt-20`}
         >
-          {isDesktop ? (
-            <div className={`w-1/2 flex items-center`}>
+          <div
+            className={`${
+              isDesktop ? "w-1/2" : "relative w-full max-w-[22rem] h-1/3 mb-5"
+            } flex items-center`}
+          >
+            {isDesktop ? (
               <Image
                 src={LandingImage}
                 alt={"Płomień Camp"}
@@ -43,18 +49,31 @@ export const Landing = () => {
                   borderRadius: "1rem",
                 }}
               />
-            </div>
-          ) : null}
+            ) : (
+              <Image
+                src={LandingImage}
+                alt={"Płomień Camp"}
+                fill
+                objectFit="cover"
+                quality={100}
+                style={{
+                  borderRadius: "1rem",
+                }}
+              />
+            )}
+          </div>
 
           <div
             className={`${
-              isDesktop ? "w-1/2" : "max-w-[22rem]"
-            } flex flex-col justify-center gap-3 text-white`}
+              isDesktop ? "w-1/2 gap-3" : "max-w-[22rem] gap-2"
+            } flex flex-col justify-center text-white`}
           >
-            <h2 className={`${isDesktop ? "text-lg" : "text-sm"}`}>
+            <h2 className={`${isDesktop ? "text-lg" : "text-[12px]"}`}>
               PŁOMIEŃ VOLLEYBALL CAMP
             </h2>
-            <h1 className={`${isDesktop ? "text-5xl" : "text-3xl"} font-bold`}>
+            <h1
+              className={`${isDesktop ? "text-5xl" : "text-2xl/7"} font-bold`}
+            >
               Tutaj rodzą
               <br />
               się mistrzowie!

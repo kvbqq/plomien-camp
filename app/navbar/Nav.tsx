@@ -36,7 +36,9 @@ const NavMenu: React.FC<NavProps> = ({ isLanding }) => {
   return (
     <React.Fragment>
       <ul
-        className={"w-[47rem] flex items-center justify-end space-x-16 px-16"}
+        className={`${
+          isLanding ? "w-[47rem] px-16" : "w-[59rem]"
+        } flex items-center justify-end space-x-16`}
       >
         {navLinks.map((item, i) => (
           <li key={i}>
@@ -51,7 +53,9 @@ const NavMenu: React.FC<NavProps> = ({ isLanding }) => {
           </li>
         ))}
       </ul>
-      <Button text="ZAPISZ SIĘ" href="../#campy" style="min-w-48 font-bold" />
+      {isLanding ? (
+        <Button text="ZAPISZ SIĘ" href="../#campy" style="min-w-48 font-bold" />
+      ) : null}
     </React.Fragment>
   );
 };
