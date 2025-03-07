@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import Image from "next/image";
 import { Montserrat } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 
@@ -54,9 +55,10 @@ export default function RootLayout({
           }}
         />
         <noscript>
-          <img
+          <Image
             height="1"
             width="1"
+            alt=""
             style={{ display: "none" }}
             src="https://www.facebook.com/tr?id=620404037445540&ev=PageView&noscript=1"
           />
