@@ -10,7 +10,6 @@ import { MdKeyboardArrowLeft } from "react-icons/md";
 import { MdKeyboardArrowRight } from "react-icons/md";
 
 import { useState, useEffect } from "react";
-import { prefetchDNS } from "react-dom";
 
 interface GallerySliderProps {
   images: GalleryImageType[] | GalleryCampType[];
@@ -52,7 +51,7 @@ export const GallerySlider: React.FC<GallerySliderProps> = ({
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, [nextImage, prevImage, setShowGallery]);
+  }, [setShowGallery]);
 
   return (
     <div

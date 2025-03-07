@@ -29,6 +29,7 @@ export default function RootLayout({
       <head>
         {/* Meta Pixel Script */}
         <Script
+          id="meta-pixel"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
