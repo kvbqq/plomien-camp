@@ -10,6 +10,7 @@ import { MdKeyboardArrowLeft } from "react-icons/md";
 import { MdKeyboardArrowRight } from "react-icons/md";
 
 import { useState, useEffect } from "react";
+import { prefetchDNS } from "react-dom";
 
 interface GallerySliderProps {
   images: GalleryImageType[] | GalleryCampType[];
@@ -24,6 +25,16 @@ export const GallerySlider: React.FC<GallerySliderProps> = ({
   setShowGallery,
 }) => {
   const [currentIndex, setCurrentIndex] = useState(startId);
+
+  const nextImage = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
+  const prevImage = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  };
 
   useEffect(() => {
     const handleKeyDown = (event: { key: string }) => {
@@ -41,17 +52,7 @@ export const GallerySlider: React.FC<GallerySliderProps> = ({
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, []);
-
-  const nextImage = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-  };
-
-  const prevImage = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
-    );
-  };
+  }, [nextImage, prevImage, setShowGallery]);
 
   return (
     <div

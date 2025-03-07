@@ -109,7 +109,7 @@ export default function CampDetails() {
     };
 
     fetchCamps();
-  }, []);
+  }, [campId]);
 
   if (loading) return <p className="text-center">Ładowanie...</p>;
   if (error) return <p className="text-center text-red-500">{error}</p>;
