@@ -79,7 +79,7 @@ export const Landing = () => {
               się mistrzowie!
             </h1>
             <p className={`${isDesktop ? "text-lg" : "text-sm"}`}>
-              Obozy siatkarskie z doświadzczoną kadrą,
+              Obozy siatkarskie z doświadczoną kadrą,
               <br />
               nowoczesnymi metodami traningowymi
               <br />i niezapomnianą atmosferą - wszystko, czego
