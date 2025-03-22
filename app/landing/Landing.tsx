@@ -81,7 +81,7 @@ export const Landing = () => {
             <p className={`${isDesktop ? "text-lg" : "text-sm"}`}>
               Obozy siatkarskie z doświadczoną kadrą,
               <br />
-              nowoczesnymi metodami traningowymi
+              nowoczesnymi metodami treningowymi
               <br />i niezapomnianą atmosferą - wszystko, czego
               <br />
               potrzebujesz, by rozpalić siatkarski płomień
