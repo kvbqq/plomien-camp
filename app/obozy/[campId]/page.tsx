@@ -18,6 +18,7 @@ import { Button } from "@/components/button/Button";
 import { GallerySlider } from "@/components/gallerySlider/GallerySlider";
 
 import verifiedImage from "@/public/verified.png";
+import sporturLogo from "@/public/sportur-logo.png";
 import { GalleryCampType } from "@/types/types";
 import { fbq } from "@/types/fbq";
 
@@ -224,29 +225,57 @@ export default function CampDetails() {
         ) : null}
         <div
           className={`${
-            isDesktop ? "w-[38rem] px-10" : "w-[90%] px-5"
-          } my-10 py-5 flex gap-5 rounded-2xl border border-gray-100 shadow-lg`}
+            isDesktop ? "w-[60rem]" : "flex-col items-center"
+          } flex gap-5 my-10`}
         >
           <div
             className={`${
-              isDesktop ? "w-2/3" : "w-1/2"
-            } flex items-center gap-4`}
+              isDesktop ? "w-2/3 px-10" : "w-[90%] px-5"
+            } py-5 flex gap-5 rounded-2xl border border-gray-100 shadow-lg`}
           >
-            <MdOutlineVerified size={52} color="#EE3135" />
-            <p className={`${isDesktop ? null : "text-[0.6rem]"}`}>
-              Obóz zgłoszony do Ministerstwa Sportu i Turystyki
-            </p>
+            <div
+              className={`${
+                isDesktop ? "w-2/3" : "w-1/2"
+              } flex items-center gap-4`}
+            >
+              <MdOutlineVerified size={52} color="#EE3135" />
+              <p className={`${isDesktop ? null : "text-[0.6rem]"}`}>
+                Obóz zgłoszony do Ministerstwa Sportu i Turystyki
+              </p>
+            </div>
+            <div
+              className={`${
+                isDesktop ? "w-1/3" : "w-1/2"
+              } h-[50px] relative flex items-center`}
+            >
+              <Image
+                src={verifiedImage}
+                alt={"Ministerstwo Sportu i Turystyki"}
+                quality={100}
+              />
+            </div>
           </div>
           <div
             className={`${
-              isDesktop ? "w-1/3" : "w-1/2"
-            } h-[50px] relative flex items-center`}
+              isDesktop ? "w-1/3 px-10 gap-3" : "w-[90%] px-5 justify-between"
+            } h-24 flex items-center rounded-2xl border border-gray-100 shadow-lg`}
           >
-            <Image
-              src={verifiedImage}
-              alt={"Ministerstwo Sportu i Turystyki"}
-              quality={100}
-            />
+            <div
+              className={`${
+                isDesktop ? null : "w-1/2 justify-center"
+              } flex items-center`}
+            >
+              <p className={`${isDesktop ? null : "text-[0.6rem]"}`}>
+                Organizator: B.U.T Sportur
+              </p>
+            </div>
+            <div
+              className={`${
+                isDesktop ? "w-2/3" : "w-1/2"
+              } h-[50px] relative flex items-center justify-center`}
+            >
+              <Image src={sporturLogo} alt={"B.U.T Sportur"} quality={100} />
+            </div>
           </div>
         </div>
         <h1 className={`${isDesktop ? "text-3xl" : "text-2xl"} font-semibold`}>
