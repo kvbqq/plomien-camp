@@ -19,6 +19,7 @@ import { GallerySlider } from "@/components/gallerySlider/GallerySlider";
 
 import verifiedImage from "@/public/verified.png";
 import { GalleryCampType } from "@/types/types";
+import { fbq } from "@/types/fbq";
 
 const GET_CAMPS_QUERY_WHERE = `
     query GetCampsWhere($campId: String!) {
@@ -47,7 +48,9 @@ const GET_CAMPS_QUERY_WHERE = `
             gallery(first: 100) {
               id
               url
-            }        
+            }
+            visitId
+            buttonId        
         }
     }
   `;
@@ -75,6 +78,8 @@ interface CampType {
     url: string;
   };
   gallery: GalleryCampType[];
+  visitId: string;
+  buttonId: string;
 }
 
 export default function CampDetails() {
@@ -110,6 +115,16 @@ export default function CampDetails() {
 
     fetchCamps();
   }, [campId]);
+
+  useEffect(() => {
+    if (
+      typeof window !== "undefined" &&
+      typeof fbq !== "undefined" &&
+      camps.length > 0
+    ) {
+      fbq("trackCustom", camps[0].visitId);
+    }
+  }, []);
 
   if (loading) return <p className="text-center">Ładowanie...</p>;
   if (error) return <p className="text-center text-red-500">{error}</p>;
@@ -189,8 +204,12 @@ export default function CampDetails() {
             </h2>
             <Button
               text="ZAPISZ SIĘ"
-              href={camps[0].link}
+              href={""}
               style="w-full font-semibold"
+              onclick={() => {
+                fbq("trackCustom", camps[0].buttonId);
+                window.open(camps[0].link, "_blank");
+              }}
             />
             <p className={`mt-2 text-sm`}>Liczba miejsc ograniczona</p>
           </div>
@@ -350,8 +369,12 @@ export default function CampDetails() {
         </div>
         <Button
           text="ZAPISZ SIĘ"
-          href={camps[0].link}
+          href={""}
           style="w-[14rem] mt-10 font-semibold"
+          onclick={() => {
+            fbq("trackCustom", camps[0].buttonId);
+            window.open(camps[0].link, "_blank");
+          }}
         />
       </section>
     </React.Fragment>

@@ -52,6 +52,7 @@ export default function RootLayout({
               }(window, document,'script', 'https://connect.facebook.net/en_US/fbevents.js');
               fbq('init', '620404037445540');
               fbq('track', 'PageView');
+              
             `,
           }}
         />
@@ -89,6 +90,19 @@ export default function RootLayout({
             `,
           }}
         />
+        <Script
+          id="gtm-head"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','GTM-WLG8R9NS');
+            `,
+          }}
+        />
         <noscript>
           <Image
             height="1"
@@ -100,6 +114,14 @@ export default function RootLayout({
         </noscript>
       </head>
       <body className={montserrat.className}>
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-WLG8R9NS"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
         {children}
         <ContactFooter />
         <Analytics />
