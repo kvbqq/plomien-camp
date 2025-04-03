@@ -165,6 +165,7 @@ export default function CampDetails() {
               alt={camps[0].name}
               fill
               objectFit="cover"
+              unoptimized
               quality={100}
               className={`rounded-2xl`}
             />
@@ -370,6 +371,7 @@ export default function CampDetails() {
               src={camps[0].hallImage.url}
               alt={`Hala sportowa - ${camps[0].place}`}
               fill
+              unoptimized
               objectFit="cover"
               quality={100}
               className={`rounded-xl`}
