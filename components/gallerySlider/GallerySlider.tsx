@@ -79,6 +79,7 @@ export const GallerySlider: React.FC<GallerySliderProps> = ({
             alt={images[currentIndex]?.id}
             width={1000}
             height={500}
+            unoptimized
             style={{ maxWidth: "700px", width: "100vw", height: "auto" }}
             quality={100}
           />
@@ -88,6 +89,7 @@ export const GallerySlider: React.FC<GallerySliderProps> = ({
             alt={images[currentIndex]?.id}
             width={1000}
             height={500}
+            unoptimized
             style={{ maxWidth: "650px", width: "100vw", height: "auto" }}
             quality={100}
           />
