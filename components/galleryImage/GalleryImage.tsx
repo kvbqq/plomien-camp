@@ -50,8 +50,8 @@ export const GalleryImage: React.FC<ImageProps> = ({
           src={url}
           alt={id}
           fill
+          unoptimized
           objectFit="cover"
-          quality={100}
           className={`rounded-2xl`}
         />
       </div>
