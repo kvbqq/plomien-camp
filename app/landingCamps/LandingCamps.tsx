@@ -69,9 +69,14 @@ export default function LandingCamps() {
       >
         Nasze <span className="text-custom-red">campy</span>
       </h1>
-      <div
+      {/* <div
         className={`${
           isDesktop ? "w-[60rem] grid-cols-3" : "w-[16rem] grid-cols-1"
+        } grid gap-5`}
+      > */}
+      <div
+        className={`${
+          isDesktop ? "flex items-center" : "w-[16rem] grid-cols-1"
         } grid gap-5`}
       >
         {camps.map((camp) => (
