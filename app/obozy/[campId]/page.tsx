@@ -17,7 +17,7 @@ import { GallerySlider } from "@/components/gallerySlider/GallerySlider";
 import { MaterialIcon } from "@/components/materialIcon/MaterialIcon";
 
 import verifiedImage from "@/public/verified.png";
-// import sporturLogo from "@/public/sportur-logo.png";
+import sporturLogo from "@/public/sportur-logo.png";
 import map from "@/public/map.png";
 import { GalleryCampType } from "@/types/types";
 import { fbq } from "@/types/fbq";
@@ -293,16 +293,16 @@ export default function CampDetails() {
             isDesktop ? "w-[60rem]" : "flex-col items-center"
           } flex gap-5 my-10`}
         >
-          {/* <div
+          <div
             className={`${
               isDesktop ? "w-2/3 px-10" : "w-[90%] px-5"
             } py-5 flex gap-5 rounded-2xl border border-gray-100 shadow-lg`}
-          > */}
-          <div
+          >
+            {/* <div
             className={`${
               isDesktop ? "w-[100%] px-10" : "w-[90%] px-5"
             } py-5 flex gap-5 rounded-2xl border border-gray-100 shadow-lg`}
-          >
+          > */}
             <div
               className={`${
                 isDesktop ? "w-2/3" : "w-1/2"
@@ -325,7 +325,7 @@ export default function CampDetails() {
               />
             </div>
           </div>
-          {/* <div
+          <div
             className={`${
               isDesktop ? "w-1/3 px-10 gap-3" : "w-[90%] px-5 justify-between"
             } h-24 flex items-center rounded-2xl border border-gray-100 shadow-lg`}
@@ -346,7 +346,7 @@ export default function CampDetails() {
             >
               <Image src={sporturLogo} alt={"B.U.T Sportur"} quality={100} />
             </div>
-          </div> */}
+          </div>
         </div>
         <h1 className={`${isDesktop ? "text-3xl" : "text-2xl"} font-semibold`}>
           Oferta <span className={`text-custom-red`}>campu</span>

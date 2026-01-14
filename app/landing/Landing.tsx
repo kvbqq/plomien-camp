@@ -39,7 +39,7 @@ export const Landing = () => {
     created(s) {
       setInterval(() => {
         s.next();
-      }, 8000);
+      }, 4000);
     },
   });
 
