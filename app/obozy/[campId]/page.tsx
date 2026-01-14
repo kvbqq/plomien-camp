@@ -193,8 +193,8 @@ export default function CampDetails() {
   ];
 
   const mid = Math.ceil(camps[0].includes.length / 2);
-  const includesLeft = camps[0].includes.slice(0, mid);
-  const includesRight = camps[0].includes.slice(mid);
+  //const includesLeft = camps[0].includes.slice(0, mid);
+  //const includesRight = camps[0].includes.slice(mid);
 
   return (
     <React.Fragment>
