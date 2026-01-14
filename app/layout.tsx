@@ -112,6 +112,10 @@ export default function RootLayout({
             src="https://www.facebook.com/tr?id=620404037445540&ev=PageView&noscript=1"
           />
         </noscript>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        />
       </head>
       <body className={montserrat.className}>
         <noscript>
