@@ -8,9 +8,22 @@ import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { fetchData } from "@/graphqlClient";
 import { GalleryImageType } from "@/types/types";
 
+// const GET_GALLERY_QUERY = `
+//     query GetImages {
+//         images(first: 100) {
+//             id
+//             title
+//             description
+//             image {
+//                 url
+//             }
+//         }
+//     }
+// `;
+
 const GET_GALLERY_QUERY = `
     query GetImages {
-        images(first: 100) {
+        images(first:100, orderBy: title_ASC) {
             id
             title
             description
