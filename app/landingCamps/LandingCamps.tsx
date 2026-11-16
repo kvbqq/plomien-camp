@@ -1,25 +1,24 @@
 "use client";
+
 import { useEffect, useState } from "react";
-// import Image from "next/image";
 
 import { fetchData } from "@/graphqlClient";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
-
 import { Camp } from "@/components/camp/Camp";
 
 const GET_CAMPS_QUERY = `
-    query GetCamps {
-        camps {
-            id
-            slug
-            name
-            place
-            date
-            image {
-                url
-            }
-        }
+  query GetCamps {
+    camps {
+      id
+      slug
+      name
+      place
+      date
+      image {
+        url
+      }
     }
+  }
 `;
 
 interface CampType {
@@ -45,7 +44,7 @@ export default function LandingCamps() {
         const data = await fetchData(GET_CAMPS_QUERY);
         setCamps(data.camps);
       } catch (err) {
-        setError("Nie udało się załadować danych." + err);
+        setError("Nie udało się załadować danych. " + err);
       } finally {
         setLoading(false);
       }
@@ -69,27 +68,35 @@ export default function LandingCamps() {
       >
         Nasze <span className="text-custom-red">campy</span>
       </h1>
-      <div
-        className={`${
-          isDesktop ? "w-[60rem] grid-cols-3" : "w-[16rem] grid-cols-1"
-        } grid gap-5`}
-      >
-        {/* <div
-        className={`${
-          isDesktop ? "flex items-center" : "w-[16rem] grid-cols-1"
-        } grid gap-5`}
-      > */}
-        {camps.map((camp) => (
-          <Camp
-            key={camp.id}
-            name={camp.name}
-            place={camp.place}
-            date={camp.date}
-            image={camp.image.url || "/fallback-image.jpg"}
-            href={camp.slug}
-          />
-        ))}
-      </div>
+
+      {camps.length === 0 ? (
+        <div className="w-[calc(100%_-_2rem)] max-w-[60rem] rounded-[2rem] bg-[#092d69] px-6 py-12 text-center sm:px-12 sm:py-16">
+          <p className="mb-5 text-xl font-bold uppercase text-custom-red sm:text-3xl">
+            SEZON 2027
+          </p>
+
+          <h2 className="text-3xl font-bold leading-tight text-white sm:text-5xl">
+            Zapisy już wkrótce!
+          </h2>
+        </div>
+      ) : (
+        <div
+          className={`${
+            isDesktop ? "w-[60rem] grid-cols-3" : "w-[16rem] grid-cols-1"
+          } grid gap-5`}
+        >
+          {camps.map((camp) => (
+            <Camp
+              key={camp.id}
+              name={camp.name}
+              place={camp.place}
+              date={camp.date}
+              image={camp.image.url || "/fallback-image.jpg"}
+              href={camp.slug}
+            />
+          ))}
+        </div>
+      )}
     </section>
   );
 }
