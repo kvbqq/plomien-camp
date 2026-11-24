@@ -1,0 +1,51 @@
+.crm-shell,
+.crm-dialog {
+  font-family: Arial, Helvetica, sans-serif;
+  --background: 0 0% 100%;
+  --foreground: 222 47% 11%;
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 47% 11%;
+  --primary: 358 84% 56%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 210 40% 96%;
+  --secondary-foreground: 222 47% 11%;
+  --muted: 210 40% 96%;
+  --muted-foreground: 215 16% 47%;
+  --accent: 210 40% 96%;
+  --accent-foreground: 222 47% 11%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 214 32% 91%;
+  --input: 214 32% 91%;
+  --ring: 358 84% 56%;
+  --radius: 0.75rem;
+}
+
+.crm-shell :focus-visible {
+  outline: 2px solid #ed3339;
+  outline-offset: 3px;
+}
+
+.crm-shell select {
+  min-height: 2.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  background: white;
+  padding: 0.5rem 2rem 0.5rem 0.75rem;
+  font-size: 0.875rem;
+}
+
+body:has(.crm-shell) {
+  min-width: 320px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .crm-shell *,
+  .crm-dialog * {
+    scroll-behavior: auto;
+    transition: none;
+    animation: none;
+  }
+}

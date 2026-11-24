@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Nav } from "../navbar/Nav";
+import { Nav } from "@/app/navbar/Nav";
 import { GalleryImage } from "@/components/galleryImage/GalleryImage";
 
 import { useMediaQuery } from "@/hooks/useMediaQuery";
